@@ -5,7 +5,7 @@ services:
     container_name: jenkins
     restart: always
     env_file:
-      - .env
+      - ./example.env
     volumes:
       - jenkins_data:/var/jenkins_home
     networks:

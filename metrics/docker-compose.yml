@@ -1,0 +1,27 @@
+services:
+  prometheus:
+    image: prom/prometheus:latest
+    env_file:
+      - ./prometheus/example.env
+    networks:
+      - default
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+
+  grafana:
+    image: grafana/grafana:latest
+    env_file:
+      - ./grafana/example.env
+    networks:
+      - default
+      - nginx-proxy
+    volumes:
+      - ./grafana/datasource.yml:/var/lib/grafana/datasource.yml
+      - grafana_data:/var/lib/grafana
+
+networks:
+  nginx-proxy:
+    external: true
+
+volumes:
+  grafana_data:
