@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  jfrog:
+    image: releases-docker.jfrog.io/jfrog/artifactory-jcr:latest
+    container_name: jfrog-jcr
+    restart: unless-stopped
+    networks:
+      - jfrog-network
+
+networks:
+  jfrog-network:
+    name: jfrog-network

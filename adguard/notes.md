@@ -1,0 +1,2 @@
+- Deshabilitar IPv6 en Windows para que funcione la resolución por DNS si no se setea en el Gateway.
+- Configuración DNS en Gateway de Telecentro: https://192.168.0.1/2.0/gui/#/mybox/dns -No aparece en las opciones de la GUI-.
